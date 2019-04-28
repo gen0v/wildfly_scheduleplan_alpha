@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+    	 <ui:composition template="./template/common/commonLayout.xhtml">
+        <ui:define name="title">Admin Management Worker</ui:define>
+
+          <ui:define name="content">
+            <b:jumbotron>
+              <b:container>
+                <h2>This is the admin page.</h2>
+                <h2>This is Schedule content for #{scheduleView.month_name}</h2>
+              </b:container>
+            </b:jumbotron>
+
+
+            <b:container>
+              <b:row>
+                <b:column>
+
+                <b:form>
+
+                  <b:panelGrid columns="6">
+                  <b:selectOneMenu value="#{adminWorkerManagementView.schedule}" required="true" label="Schedules">
+                    <f:selectItems value="#{adminWorkerManagementView.schedules}" var="j" itemValue="#{j}" itemLabel="#{j.name}" />
+                  </b:selectOneMenu>
+
+                  <b:commandButton value="Submit" actionListener="#{adminWorkerManagementView.testingJavascript}" look="success" onerror="alert('Something went wrong!')" update="dtable"/>
+
+                  </b:panelGrid>
+
+
+<!--
+                          console.log($.isArray(indexes) + ' ' + $.type(indexes));
+                          $.each(indexes, function(index, value) {console.log(index + ': ' + $.isEmptyObject(value) +
+
+                          $.each(value, function(key, element) {console.log('key: ' + key + '\n' + 'value: ' + element.toString());})
+
+                          );});
+-->
+
+
+
+                          <b:dataTable id="dtable" row-group="1" select="true" selected-items='cell' selectionMode='multiple' value="#{adminWorkerManagementView.worker}" var="worker" widgetVar="wWorker"
+                          onselect="addToSelection(indexes);" ondeselect="deleteFromSelection(indexes);">
+
+                                <b:dataTableColumn value="#{worker.name}" label="Worker" />
+                                <b:dataTableColumn value="#{worker.job}" label="Job"  header-style-class="hidden" content-style-class="hidden" />
+
+                                <c:forEach var="day" items="#{scheduleView.day_array}">
+                                  <b:dataTableColumn value="#{worker.schedule[day].name}" label="#{(day.dayOfMonth lt 10) ? ('0'+day.dayOfMonth) : day.dayOfMonth}" style-class="#{(day.dayOfWeek == 'SATURDAY' || day.dayOfWeek == 'SUNDAY') ? 'yellow' : ''}"/>
+                                </c:forEach>
+
+                                <b:dataTableColumn label="Option" >
+                                  <b:commandButton value="Delete" iconAwesome="trash"
+                                                   action="#{adminWorkerManagementView.delete(worker)}">
+                                    <f:ajax execute="@this" render="@form" />
+                                  </b:commandButton>
+                              </b:dataTableColumn>
+
+
+
+                          </b:dataTable>
+
+
+                            <b:remoteCommand name="addToSelectionList" actionListener="#{adminWorkerManagementView.setInitialValue}" style="display: none;" parameters="initialValue" immediate="true"/>
+
+
+                          <script type="text/javascript">
+                            var str = "";
+
+                              function addToSelection(indexes){
+                                var tmp = '';
+                                $.each(indexes,function(key, value) {
+                                  tmp = getRowColumn(value);
+                                  //if(!str.includes(tmp))
+                                  if(tmp.includes(str))tmp = tmp.replace(str,'');
+                                  str = str + tmp;
+
+                                })
+                                console.log(str);
+                                addToSelectionList(str, event);
+                                //str = "";
+                            }
+
+                            function deleteFromSelection(indexes){
+
+                              $.each(indexes,function(key, value) {
+                                str = str.replace(getRowColumn(value),'');
+
+                                //myCommand(value, event);
+                              })
+                              console.log(str);
+                              addToSelectionList(str, event);
+                          }
+
+                            function getRowColumn(val){
+                              var ret = "";
+                              $.each(val,function(key, value){
+                                  if(key != "columnVisible")
+                                    ret = ret + key + ' ' + value + ' ';
+                              })
+                              return ret;
+                            }
+                          </script>
+
+
+
+
+
+</b:form>
+
+              </b:column>
+             </b:row>
+            </b:container>
+
+
+
+          </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>

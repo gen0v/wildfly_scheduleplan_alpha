@@ -1,0 +1,28 @@
+body {
+}
+
+#header {
+  background-color: lightblue;
+}
+
+#footer {
+  background-color: red;
+}
+
+#content {
+  background-color: green;
+}
+
+.red{
+   background-color:red;
+   background-image:none;
+}
+
+.dtrg-group{
+  background-color: yellow !important;
+}
+
+
+.blue { color: #0000cc; }
+.yellow {background-color: yellow;}
+.white {color: white;}

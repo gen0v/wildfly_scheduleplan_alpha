@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title><ui:insert name="title">commonTitle</ui:insert></title>
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=UTF-8" />
+        <!--Doesnt Work!! <link rel="stylesheet" type="text/css" href="/resources/myOwnStylesheet.css">-->
+        <!--<h:outputStylesheet library="css" name="myOwnStylesheet.css" position="last"/>-->
+        <h:outputStylesheet library="css" name="myOwnStylesheet.css"/>
+    </h:head>
+
+<h:body>
+
+
+        <ui:insert name="header" >
+          <ui:include src ="/template/common/commonHeader.xhtml" />
+        </ui:insert>
+
+        <ui:insert name="content" >
+          <ui:include src ="/template/common/commonContent.xhtml" />
+        </ui:insert>
+
+        <ui:insert name="footer" >
+          <ui:include src ="/template/common/commonFooter.xhtml" />
+        </ui:insert>
+
+
+
+
+
+</h:body>
+
+
+
+
+</html>

@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Schedule v0.01</title>
+    </h:head>
+
+    <h:body>
+    	 <ui:composition template="./template/common/commonLayout.xhtml">
+
+          <ui:define name="content">
+            <b:jumbotron>
+              <b:container>
+                <h2>This is Schedule content</h2>
+              </b:container>
+            </b:jumbotron>
+            <b:container>
+              <b:row>
+                <b:column>
+                          <h:form>
+                          <b:dataTable class="compact" value="#{sandbox.emptyWorker}" var="worker">
+
+                            <f:facet name="header" orderable="false">
+                              <tr orderable="false">
+                              <th colspan="1" rowspan="2" orderable="false">Worker</th>
+                              <th colspan="11">Monat</th>
+
+                              </tr>
+                              <tr orderable="false">
+                                <ui:repeat var="days" value="#{sandbox.days}" orderable="false">
+                                  <th orderable="false">#{days.key.dayOfMonth}</th>
+                                </ui:repeat>
+                              </tr>
+                            </f:facet>
+
+
+                          </b:dataTable>
+                        </h:form>
+              </b:column>
+             </b:row>
+            </b:container>
+
+
+
+            <b:container>
+              <b:row>
+                <b:column>
+                          <h:form>
+                          <b:dataTable class="compact" value="#{sandbox.emptyWorker}" var="worker">
+
+                                <b:dataTableColumn value="#{worker.name}" label="Worker" orderable="false"/>
+
+                                <c:forEach var="days" items="#{sandbox.days}">
+                                  <b:dataTableColumn value="#{days.key.dayOfMonth}" label="#{days.key.dayOfMonth}" orderable="false"/>
+                                </c:forEach>
+
+
+                          </b:dataTable>
+                        </h:form>
+              </b:column>
+             </b:row>
+            </b:container>
+
+
+
+
+
+<b:container>
+  <b:row>
+    <b:column>
+              <h:form>
+              <b:dataTable class="compact" value="#{sandbox.emptyWorker}" var="worker">
+
+                #{sandbox.sand}
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+                <b:dataTableColumn value="#{worker.id}" orderable="false"/>
+
+              </b:dataTable>
+            </h:form>
+  </b:column>
+ </b:row>
+</b:container>
+
+
+<b:container>
+  <b:row>
+    <b:column>
+                <table>
+                  <tr>
+                    <th >Order No</th>
+                    <ui:repeat var="days" value="#{sandbox.days}">
+                      <th>#{days.key.dayOfMonth}</th>
+                    </ui:repeat>
+                  </tr>
+                  <tbody>
+                    <ui:repeat var="dayss" value="#{sandbox.days}">
+
+                      <tr>
+                        <td>#{dayss.key}</td>
+                        <td>#{dayss.value}</td>
+                      </tr>
+
+                    </ui:repeat>
+                  </tbody>
+                </table>
+  </b:column>
+ </b:row>
+</b:container>
+
+
+<ui:repeat id="items" value="#{sandbox.strings}" var="item">
+    <h:outputText value="EUGEN" />
+</ui:repeat>
+
+
+<h:form id="select">
+				  <h:dataTable value="#{sandbox.emptyWorker}" var="loc">
+					  <h:column>
+						  <f:facet name="header" >
+							  <h:outputText value="Frameworks"/>
+						  </f:facet>
+						  <h:outputText value="dad"/>
+					  </h:column>
+				  </h:dataTable>
+
+				  <h:panelGrid>
+					  <f:facet name="header">
+						  <h:outputText value="Employee Details"/>
+					  </f:facet>
+					  <h:dataTable value="fsf" var="loc">
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee No"/>
+							  </f:facet>
+							  <h:outputText value="fsfs"/>
+						  </h:column>
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee Name"/>
+							  </f:facet>
+							  <h:outputText value="afsa"/>
+						  </h:column>
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee Street"/>
+							  </f:facet>
+							  <h:outputText value="fdsf"/>
+						  </h:column>
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee City"/>
+							  </f:facet>
+							  <h:outputText value="jgfh}"/>
+						  </h:column>
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee Country"/>
+							  </f:facet>
+							  <h:outputText value="trgrg"/>
+						  </h:column>
+						  <h:column>
+							  <f:facet name="header" >
+								  <h:outputText value="Employee PinCode"/>
+							  </f:facet>
+							  <h:outputText value="fsfssf"/>
+						  </h:column>
+					  </h:dataTable>
+					  </h:panelGrid>
+				  </h:form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </ui:define>
+
+
+
+          <ui:define name="footer">
+            <h2>This is schedule Footer</h2>
+          </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
