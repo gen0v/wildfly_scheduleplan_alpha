@@ -1,6 +1,6 @@
 # Wildfly Scheduleplan
 
-This is a webapp for wildfly servers, a small project in alpha stage (maybe for small firms) to plan a schedule for workers with different jobs and different schedules.
+This is a webapp for wildfly servers, a small project in alpha stage (maybe for small firms) to plan a schedule for workers with different jobs and different schedules. Also it should be able to use it well on mobile devices.
 
 ## Getting Started
 
@@ -46,3 +46,10 @@ org.wildfly.plugins:wildfly-maven-plugin:redeploy
 ![News](https://user-images.githubusercontent.com/45632380/56865203-9a543c00-69cb-11e9-9ce2-e2e0e347ddb0.png)
 ![Job](https://user-images.githubusercontent.com/45632380/56865207-9f18f000-69cb-11e9-8074-0e5a6cfa8db0.png)
 
+## Mobile Pictures
+
+![screen1](https://user-images.githubusercontent.com/45632380/56921831-0f586c00-6ac7-11e9-8d51-c98dbfea9bad.jpg)
+![screen2](https://user-images.githubusercontent.com/45632380/56921832-0f586c00-6ac7-11e9-8595-8ed7222f9ed3.jpg)
+![screen3](https://user-images.githubusercontent.com/45632380/56921833-0ff10280-6ac7-11e9-854d-eabe92529de8.jpg)
+![screen4](https://user-images.githubusercontent.com/45632380/56921834-0ff10280-6ac7-11e9-85e8-81b7eac2ee33.jpg)
+![screen5](https://user-images.githubusercontent.com/45632380/56921835-0ff10280-6ac7-11e9-9373-6be352523fdc.jpg)
